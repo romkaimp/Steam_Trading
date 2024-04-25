@@ -9,10 +9,12 @@ import pickle
 
 
 async_engine = create_async_engine(settings.DATABASE_URL_asyncpg,
-                                   echo=False,
-                                   pool_size=5,
-                                   max_overflow=10,
-                                   pool_recycle=3600)
+                                   echo_pool=True,
+                                   pool_size=0,
+                                   #max_overflow=50,
+                                   pool_recycle=600,
+                                   isolation_level="SERIALIZABLE",
+                                   connect_args={"timeout": 60})
 
 
 #sync_engine = create_engine(url=settings.DATABASE_URL_psycopg,

@@ -4,7 +4,7 @@ import asyncio
 import numpy as np
 import pandas
 import pandas as pd
-
+from asyncpg.exceptions import SerializationError
 from data.orm.engine import async_engine, async_session, Base
 from data.orm.models import metadata_obj, SteamListings
 from sqlalchemy import select, func, and_, update, insert
@@ -74,19 +74,25 @@ async def async_check_contains(name) -> bool:
             return False
 
 
-async def async_insert_listing(name, val=0, ref_small_image = '', ref_big_image = '', ref_gun = '', date=datetime.datetime.now()):
+async def async_insert_listing(name, val=0, ref_small_image = '', ref_big_image = '', ref_gun = '', date: datetime = datetime.datetime.now()):
     async with async_session() as session:
-        a = pickle.dumps(pd.DataFrame({"cost": [val], "time": [date]}, ))
-        query1 = select(SteamListings).filter_by(name=name)
-        if len((await session.execute(query1)).all()) == 0:
-            query = insert(SteamListings).values(name=name, main_gun=name, time_series_pckl=a,
-                                                 image_small=ref_small_image, image_big=ref_big_image, ref="")
-            #new_item = SteamListings(name=name, main_gun=name, time_series_pckl=a, ref="")
-            await session.execute(query)
-        else:
-            await async_update_ts(name, val)
+        while True:
+            try:
+                a = pickle.dumps(pd.DataFrame({"cost": [val], "time": [date]}, ))
+                query1 = select(SteamListings).filter_by(name=name)
+                if len((await session.execute(query1)).all()) == 0:
+                    query = insert(SteamListings).values(name=name, main_gun=name, time_series_pckl=a,
+                                                         image_small=ref_small_image, image_big=ref_big_image,
+                                                         ref=ref_gun, time_series_new_val=1)
+                    #new_item = SteamListings(name=name, main_gun=name, time_series_pckl=a, ref="")
+                    await session.execute(query)
+                else:
+                    await async_update_ts(name, val)
 
-        await session.commit()
+                await session.commit()
+                break
+            except SerializationError as err:
+                await asyncio.sleep(1)
 
 
 #async def async_insert_new_val(*args):
@@ -98,20 +104,30 @@ async def async_insert_listing(name, val=0, ref_small_image = '', ref_big_image 
 #            session.add(new_item)
 #        session.commit()
 
-#TODO Вызвать обучение нейросети после добавления новых значений
+
 async def async_update_ts(name, val, date=datetime.datetime.now()):
     async with async_session() as session:
+
         query_get = select(SteamListings.time_series_pckl).filter_by(name=name)
         res = (await session.execute(query_get)).scalars().all()
+
+        query_get_new_val_number = select(SteamListings.time_series_new_val).filter_by(name=name)
+        res_new_val_number = (await session.execute(query_get_new_val_number)).scalars().all()[0]
+
         if len(res) == 0:
-            return await async_insert_listing(name, val, date)
+            return await async_insert_listing(name=name, val=val, date=date)
         res = pickle.loads(res[0])
-        #data = datetime.datetime.now()
+        res_new_val_number += 1
+
         if res.size >= SteamListings.ts_long:
             res = res.loc[1:]
         res.loc[len(res.index)] = [val, date]
         pckl = pickle.dumps(res)
-        query_update = update(SteamListings).values(time_series_pckl = pckl).filter_by(name=name)
+
+        query_update = (update(SteamListings)
+                        .values(time_series_pckl=pckl, time_series_new_val=res_new_val_number)
+                        .filter_by(name=name))
+
         await session.execute(query_update)
         await session.commit()
 
