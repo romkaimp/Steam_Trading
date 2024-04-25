@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     @property
     def DATABASE_URL_asyncpg(self):
         #return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
-        return f"postgresql+asyncpg://postgres:Vfvekz196!@localhost:5432/steam_project"
+        return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     @property
     def DATABASE_URL_psycopg(self):

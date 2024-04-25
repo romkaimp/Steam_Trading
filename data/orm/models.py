@@ -1,13 +1,13 @@
 import asyncio
 
-from sqlalchemy import Table, Column, Integer, String, MetaData, text, ForeignKey, Index, DDL, event, PickleType, URL
+from sqlalchemy import Table, Column, Integer, String, MetaData, text, ForeignKey, Index, DDL, event, PickleType, URL, LargeBinary
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from data.orm.engine import Base, str_256, str_256_pk
 import enum
 import datetime
 from typing import Optional, Annotated
 import pickle
-
+from pydantic import BaseModel, SecretStr
 
 
 metadata_obj = MetaData()
@@ -35,6 +35,8 @@ class SteamListings(Base):
     image_small = Column(String(512))
     image_big = Column(String(512))
     time_series_pckl = Column(PickleType)
+    ml_weights = Column(LargeBinary)
+    time_series_new_val = Column(Integer)
 
 
 class SkinId(Base):
@@ -54,6 +56,11 @@ class Transactions(Base):
     status: Mapped[TransactionStatus]
 
 
+class UserPd(BaseModel):
+    user_id: int
+    password_hash: SecretStr
+    mail: str
+
 class User(Base):
     __tablename__ = "users"
 
@@ -61,3 +68,6 @@ class User(Base):
     password_hash: Mapped[str_256]
     mail: Mapped[str_256]
 
+if __name__ == "__main__":
+    loop = asyncio.get_event_loop()
+    #loop.run_until_complete()

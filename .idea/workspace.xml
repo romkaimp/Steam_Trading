@@ -4,20 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cfdde6d-98c8-4451-8074-692fa283258b" name="Changes" comment="gr">
-      <change afterPath="$PROJECT_DIR$/data/orm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/orm/async_orm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/orm/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/orm/engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/orm/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/orm/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/settings.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/domain/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/domain/events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_layer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_layer/messagebus.py" afterDir="false" />
+    <list default="true" id="0cfdde6d-98c8-4451-8074-692fa283258b" name="Changes" comment="data-level">
+      <change afterPath="$PROJECT_DIR$/celery_settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/ml/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/ml/data_validation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/ml/ml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/settings.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/async_orm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/parser/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_layer/messagebus.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_layer/messagebus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,21 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.__init__.executor": "Run",
-    "Python.async_orm.executor": "Run",
-    "Python.engine.executor": "Run",
-    "Python.models.executor": "Run",
-    "Python.orm.executor": "Run",
-    "Python.parser.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "data__level",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.async_orm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.celery_settings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.engine.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.parser.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;data__level&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\FASTAPI\pythonProject" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -98,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713470956726</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="data-level">
+      <option name="closed" value="true" />
+      <created>1713590120760</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713590120760</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gr" />
-    <option name="LAST_COMMIT_MESSAGE" value="gr" />
+    <MESSAGE value="data-level" />
+    <option name="LAST_COMMIT_MESSAGE" value="data-level" />
   </component>
 </project>
