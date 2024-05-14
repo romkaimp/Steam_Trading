@@ -47,14 +47,16 @@ async def pagination_limit() -> Tuple[int, int]:
 
 async def get_prices(pg: int, lim: int = ITEMS_COUNT) -> None:
     proxy = random.choice(PROXIES)
+    #print(proxy, PROX_PASS, PROX_USER)
     while True:
         try:
 
-            async with aiohttp.ClientSession() as session:#trust_env=True) as session:
+            async with aiohttp.ClientSession(trust_env=True, timeout=aiohttp.ClientTimeout(5)) as session:#trust_env=True) as session:
                 proxy_auth = aiohttp.BasicAuth(PROX_USER, PROX_PASS)
                 async with session.get(f'https://steamcommunity.com/market/search/render/',
                                        proxy=proxy,
                                        proxy_auth=proxy_auth,
+                                       headers={"user-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.465 (Edition Yx GX)'},
                                        params={"start": f"{pg*ITEMS_COUNT-ITEMS_COUNT}",
                                                "count": lim,
                                                "sort_dir": "desc",
@@ -119,6 +121,10 @@ async def get_prices(pg: int, lim: int = ITEMS_COUNT) -> None:
             print(pg, "Attribute error", err)
             #await asyncio.sleep(1)
             #await asyncio.sleep(1)
+        except aiohttp.client_exceptions.ClientHttpProxyError as err:
+            proxy = random.choice(PROXIES)
+        except asyncio.TimeoutError as err:
+            proxy = random.choice(PROXIES)
 
 
             #loop.run_until_complete(task_list)
@@ -131,28 +137,26 @@ async def table_update(pages) -> None:#List[Coroutine | Any]:
 
     [await get_prices(i) for i in range(1, pages[0])]
     await get_prices(pages[0], pages[1])
-
-
-
+    await asyncio.sleep(60)
+    print("ready")
     #[list_of_tasks.append(get_prices(i)) for i in range(1, pages[0])]
     #list_of_tasks.append(get_prices(pages[0], pages[1]))
     #await asyncio.gather(*list_of_tasks)
 
 
-
-
-
-
-
-
+#async def main():
+#    loop = asyncio.get_event_loop()
+#    # pages = loop.run_until_complete(pagination_limit()) FOR POWERFUL DATABASE
+#    pages = (11, 1)
+#    loop.run_until_complete(table_update(pages))
 
 
 if __name__ == "__main__":
     start = time.time()
     loop = asyncio.get_event_loop()
-    #pages = loop.run_until_complete(pagination_limit()) FOR POWERFUL DATABASE
-    pages = (11, 0)
-    loop.run_until_complete(table_update(pages))
+    pages = (11, 1)
+
+    [loop.run_until_complete(table_update(pages)) for i in range(50)]
     end = time.time()
 
 

@@ -62,8 +62,10 @@ class Base(DeclarativeBase):
             elif str(col)[:3] == "image":
                 cols.append(f"{col}=img")
             else:
-                if getattr(self, col) is not None:
+                if getattr(self, col) is not None and type(getattr(self, col)) != int:
                     cols.append(f"{col}={getattr(self, col)[:10]}")
+                else:
+                    cols.append(f"{col}={getattr(self, col)}")
         return f"<{self.__class__.__name__} {','.join(cols)}>"
 
     def __str__(self):

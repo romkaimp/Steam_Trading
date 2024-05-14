@@ -4,21 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cfdde6d-98c8-4451-8074-692fa283258b" name="Changes" comment="data-level">
-      <change afterPath="$PROJECT_DIR$/celery_settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/ml/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/ml/data_validation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/ml/ml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/settings.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks.py" afterDir="false" />
+    <list default="true" id="0cfdde6d-98c8-4451-8074-692fa283258b" name="Changes" comment="working parser with proxy">
+      <change afterPath="$PROJECT_DIR$/data/parser/proxies.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/parser/proxy_auth.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celery_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/async_orm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/orm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/parser/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_layer/messagebus.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_layer/messagebus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/data/settings.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/domain/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/domain/events.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/ml/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/ml/ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_layer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/predictions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_layer/messagebus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -67,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\FASTAPI\pythonProject\data\parser" />
       <recent name="E:\FASTAPI\pythonProject" />
     </key>
   </component>
@@ -113,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713590120760</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="data-level">
+      <option name="closed" value="true" />
+      <created>1714027857932</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714027857932</updated>
+    </task>
+    <task id="LOCAL-00005" summary="working parser with proxy">
+      <option name="closed" value="true" />
+      <created>1715686262881</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715686262881</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gr" />
     <MESSAGE value="data-level" />
-    <option name="LAST_COMMIT_MESSAGE" value="data-level" />
+    <MESSAGE value="working parser with proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="working parser with proxy" />
   </component>
 </project>

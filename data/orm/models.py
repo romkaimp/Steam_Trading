@@ -29,14 +29,14 @@ class SteamListings(Base):
     __tablename__ = "listings"
 
     ts_long = 50
-    name: Mapped[str_256_pk]
+    name: Mapped[str] = mapped_column(primary_key=True, index=True)
     main_gun: Mapped[str_256]
     ref: Mapped[str_512]
     image_small = Column(String(512))
     image_big = Column(String(512))
     time_series_pckl = Column(PickleType)
     ml_weights = Column(LargeBinary)
-    time_series_new_val = Column(Integer)
+    time_series_new_val = Column(Integer, index=True)
 
 
 class SkinId(Base):

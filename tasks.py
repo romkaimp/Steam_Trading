@@ -1,12 +1,12 @@
 import celery
 from celery_settings import app
-from data.parser.parser import table_update
+from data.parser.parser import main
 from service.ml.ml import update_weights
 
 
 @app.task
 def table_update():
-    table_update()
+    main()
 
 
 @app.task

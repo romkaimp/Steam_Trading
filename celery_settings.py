@@ -12,11 +12,11 @@ app.conf.beat_schedule = {
     "parsing_steam":
         {
             "task": "tasks.table_update",
-            "schedule": 60.0,
+            "schedule": 300,
         },
     "updating_ml":
         {
             "task": "tasks.update_weights",
-            "schedule": 3000.0,
+            "schedule": 9000.0,
         }
 }
