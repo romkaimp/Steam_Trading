@@ -8,7 +8,7 @@ import pandas as pd
 from asyncpg.exceptions import SerializationError
 from data.orm.engine import async_engine, async_session, Base
 from data.orm.models import metadata_obj, SteamListings
-from sqlalchemy import select, func, and_, update, insert
+from sqlalchemy import select, func, and_, update, insert, delete
 import numpy
 NEW_VAL_COUNT = 30
 
@@ -85,7 +85,7 @@ async def async_update_weight(name, weights):
         res_new_val_number = (await session.execute(query_get_new_val_number)).scalars().all()[0] - NEW_VAL_COUNT
 
         query = (update(SteamListings).
-                 values(time_series_pckl=weights, time_series_new_val=res_new_val_number).
+                 values(ml_weights=weights, time_series_new_val=res_new_val_number).
                  filter_by(name=name))
         await session.execute(query)
         await session.commit()
@@ -98,6 +98,17 @@ async def async_check_contains(name) -> bool:
         if len((await session.execute(query1)).all()) == 0:
             return True
         else:
+            return False
+
+
+async def async_delete_item(name):
+    async with async_session() as session:
+        try:
+            query = delete(SteamListings).where(SteamListings.name == name)
+            await session.execute(query)
+            await session.commit()
+            return True
+        except TypeError as err:
             return False
 
 
@@ -117,6 +128,7 @@ async def async_insert_listing(name, val=0, ref_small_image = '', ref_big_image 
                     #await async_update_ts(name, val, date)
                     query_get = select(SteamListings.time_series_pckl).filter_by(name=name)
                     res = (await session.execute(query_get)).scalars().all()
+                    #TODO Обработка исключений
 
                     query_get_new_val_number = select(SteamListings.time_series_new_val).filter_by(name=name)
                     res_new_val_number = (await session.execute(query_get_new_val_number)).scalars().all()[0]
@@ -183,5 +195,6 @@ if __name__ == "__main__":
     #loop.run_until_complete(async_drop_tables())
     #print(loop.run_until_complete(async_select_ts("Kilowatt Case")))
     #print(loop.run_until_complete(async_find_by_name("Kilowatt Case")))
-    print(loop.run_until_complete(async_select_all(names=True)))
+    #print(loop.run_until_complete(async_select_all(names=True)))
+    loop.run_until_complete(async_delete_item("AK-47 | Slate (Minimal Wear)"))
 

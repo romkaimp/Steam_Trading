@@ -4,9 +4,9 @@ from sklearn.preprocessing import QuantileTransformer, MinMaxScaler
 from numpy import log
 from pmdarima import auto_arima
 from statsmodels.tsa.statespace.sarimax import SARIMAX
-import tensorflow as tf
-from keras.src.layers import GRU, Dense, Input
-from keras.src import Sequential, callbacks
+
+#from keras.src.layers import GRU, Dense, Input
+#from keras.src import Sequential, callbacks
 from typing import Tuple
 import numpy as np
 import data.orm.async_orm as orm
@@ -68,8 +68,8 @@ def predict():
     pass
 
 
-if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    name = "AK-47 | Slate (Minimal Wear)"
-    model = GRUModel()
-    loop.run_until_complete(model.initialize_weights(name))
+#if __name__ == "__main__":
+#    loop = asyncio.get_event_loop()
+#    name = "AK-47 | Slate (Minimal Wear)"
+#    model = GRUModel()
+#    loop.run_until_complete(model.initialize_weights(name))
