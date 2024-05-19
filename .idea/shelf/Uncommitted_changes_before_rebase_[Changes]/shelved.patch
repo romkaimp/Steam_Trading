@@ -1,0 +1,296 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0cfdde6d-98c8-4451-8074-692fa283258b\" name=\"Changes\" comment=\"working parser with proxy\">\r\n      <change afterPath=\"$PROJECT_DIR$/data/parser/proxies.txt\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/data/parser/proxy_auth.env\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/web/web_api.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/celery_settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/celery_settings.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/__init__.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/async_orm.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/async_orm.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/engine.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/engine.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/models.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/models.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/parser/parser.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/parser/parser.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/settings.env\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/settings.env\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/service/domain/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/__init__.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/service/domain/events.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/service/ml/ml.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/service/ml/ml.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/service/service_layer/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/web/predictions.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/service/service_layer/messagebus.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/tasks.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/tasks.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fHWpjdtffyNHZcJnUPtOIX1LkH\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.async_orm.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.celery_settings.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.engine.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.models.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.orm.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.parser.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.test.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;data__level&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\FASTAPI\\pythonProject\\data\\parser\" />\r\n      <recent name=\"E:\\FASTAPI\\pythonProject\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>C:\\Users\\Борис\\AppData\\Roaming\\Subversion</configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0cfdde6d-98c8-4451-8074-692fa283258b\" name=\"Changes\" comment=\"\" />\r\n      <created>1713458668583</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1713458668583</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"gr\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713470610988</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713470610988</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"gr\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713470956726</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713470956726</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"data-level\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713590120760</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713590120760</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"data-level\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714027857932</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714027857932</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"working parser with proxy\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715686262881</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715686262881</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"*\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"gr\" />\r\n    <MESSAGE value=\"data-level\" />\r\n    <MESSAGE value=\"working parser with proxy\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"working parser with proxy\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5d0f11b4b45bcf751c2c17e7ed7da37579cb50f4)
++++ b/.idea/workspace.xml	(date 1716104642350)
+@@ -5,22 +5,16 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="0cfdde6d-98c8-4451-8074-692fa283258b" name="Changes" comment="working parser with proxy">
+-      <change afterPath="$PROJECT_DIR$/data/parser/proxies.txt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/data/parser/proxy_auth.env" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/celery_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_settings.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/data/orm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/__init__.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/async_orm.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/engine.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/orm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/models.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/data/orm/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/config.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/data/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/parser/parser.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/data/settings.env" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/service/domain/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/__init__.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/service/domain/events.py" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/data/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/settings.env" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/service/ml/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/ml/ml.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/service/service_layer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/predictions.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/service/service_layer/messagebus.py" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/service/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/settings.env" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -55,28 +49,60 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.async_orm.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.celery_settings.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.engine.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.orm.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.parser.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;data__level&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Python.__init__.executor": "Run",
++    "Python.async_orm.executor": "Run",
++    "Python.celery_settings.executor": "Run",
++    "Python.config.executor": "Run",
++    "Python.engine.executor": "Run",
++    "Python.ml.executor": "Run",
++    "Python.models.executor": "Run",
++    "Python.orm.executor": "Run",
++    "Python.parser.executor": "Run",
++    "Python.test.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "data__level",
++    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="E:\FASTAPI\pythonProject\data\orm" />
++      <recent name="E:\FASTAPI\pythonProject" />
+       <recent name="E:\FASTAPI\pythonProject\data\parser" />
+-      <recent name="E:\FASTAPI\pythonProject" />
+     </key>
+   </component>
++  <component name="RunManager">
++    <configuration name="ml" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="pythonProject" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/service/ml" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/service/ml/ml.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Python.ml" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -136,7 +162,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1715686262881</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="working parser with proxy">
++      <option name="closed" value="true" />
++      <created>1715714684818</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1715714684818</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1716103446834)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31__Changes_.xml	(date 1716103446834)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]" date="1715686463179" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 14.05.2024 14:31 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1715686293922)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_14_31_[Changes]/shelved.patch	(date 1715686293922)
+@@ -0,0 +1,133 @@
++Index: data/settings.env
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>DB_HOST='localhost'\r\nDB_PORT='5432'\r\nDB_USER='postgres'\r\nDB_PASS='Vfvekz196!'\r\nDB_NAME='steam_project'
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/data/settings.env b/data/settings.env
++--- a/data/settings.env	(revision 1bacd2f51de114a31f45f39eb417b06575abe25b)
+++++ b/data/settings.env	(date 1715682403352)
++@@ -2,4 +2,4 @@
++ DB_PORT='5432'
++ DB_USER='postgres'
++ DB_PASS='Vfvekz196!'
++-DB_NAME='steam_project'
++\ No newline at end of file
+++DB_NAME='steam_project'
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0cfdde6d-98c8-4451-8074-692fa283258b\" name=\"Changes\" comment=\"data-level\">\r\n      <change afterPath=\"$PROJECT_DIR$/celery_settings.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/service/__init__.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/service/ml/__init__.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/service/ml/data_validation.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/service/ml/ml.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/service/settings.env\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/tasks.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/async_orm.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/async_orm.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/config.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/config.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/engine.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/engine.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/orm/models.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/orm/models.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/parser/parser.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/parser/parser.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/service/service_layer/messagebus.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/service/service_layer/messagebus.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fHWpjdtffyNHZcJnUPtOIX1LkH\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.async_orm.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.celery_settings.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.engine.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.models.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.orm.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.parser.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.test.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;data__level&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\FASTAPI\\pythonProject\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>C:\\Users\\Борис\\AppData\\Roaming\\Subversion</configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0cfdde6d-98c8-4451-8074-692fa283258b\" name=\"Changes\" comment=\"\" />\r\n      <created>1713458668583</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1713458668583</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"gr\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713470610988</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713470610988</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"gr\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713470956726</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713470956726</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"data-level\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713590120760</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713590120760</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"*\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"gr\" />\r\n    <MESSAGE value=\"data-level\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"data-level\" />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 1bacd2f51de114a31f45f39eb417b06575abe25b)
+++++ b/.idea/workspace.xml	(date 1715683183163)
++@@ -5,20 +5,14 @@
++   </component>
++   <component name="ChangeListManager">
++     <list default="true" id="0cfdde6d-98c8-4451-8074-692fa283258b" name="Changes" comment="data-level">
++-      <change afterPath="$PROJECT_DIR$/celery_settings.py" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/service/ml/__init__.py" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/service/ml/data_validation.py" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/service/ml/ml.py" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/service/settings.env" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/tasks.py" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/data/parser/parser_api.py" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/data/parser/proxies.txt" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/data/parser/proxy_auth.env" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/async_orm.py" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/data/orm/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/config.py" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/engine.py" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/data/orm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/models.py" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/data/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/parser/parser.py" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/service/service_layer/messagebus.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_layer/messagebus.py" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/data/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/data/settings.env" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -67,6 +61,7 @@
++ }</component>
++   <component name="RecentsManager">
++     <key name="MoveFile.RECENT_KEYS">
+++      <recent name="E:\FASTAPI\pythonProject\data\parser" />
++       <recent name="E:\FASTAPI\pythonProject" />
++     </key>
++   </component>
++@@ -113,7 +108,15 @@
++       <option name="project" value="LOCAL" />
++       <updated>1713590120760</updated>
++     </task>
++-    <option name="localTasksCounter" value="4" />
+++    <task id="LOCAL-00004" summary="data-level">
+++      <option name="closed" value="true" />
+++      <created>1714027857932</created>
+++      <option name="number" value="00004" />
+++      <option name="presentableId" value="LOCAL-00004" />
+++      <option name="project" value="LOCAL" />
+++      <updated>1714027857932</updated>
+++    </task>
+++    <option name="localTasksCounter" value="5" />
++     <servers />
++   </component>
++   <component name="Vcs.Log.Tabs.Properties">
++Index: data/parser/proxies.txt
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/data/parser/proxies.txt b/data/parser/proxies.txt
++new file mode 100644
++--- /dev/null	(date 1715684198747)
+++++ b/data/parser/proxies.txt	(date 1715684198747)
++@@ -0,0 +1,30 @@
+++http://194.67.197.48:9551
+++http://193.124.179.138:9421
+++http://193.124.179.41:9993
+++http://193.124.179.42:9499
+++http://193.124.178.120:9560
+++http://193.124.176.58:9788
+++http://194.67.198.52:9494
+++http://194.67.197.222:9667
+++http://193.124.179.190:9949
+++http://193.124.178.65:9093
+++http://194.67.199.202:9549
+++http://193.124.179.248:9954
+++http://194.67.197.73:9299
+++http://193.124.176.248:9407
+++http://193.124.178.113:9611
+++http://193.124.177.44:9441
+++http://194.67.199.226:9161
+++http://194.67.198.91:9559
+++http://194.67.214.128:9062
+++http://194.67.217.215:9578
+++http://194.67.218.92:9536
+++http://194.67.215.202:9729
+++http://194.67.214.224:9319
+++http://194.67.214.221:9110
+++http://194.67.218.54:9366
+++http://194.67.213.146:9787
+++http://194.67.217.216:9725
+++http://194.67.215.126:9623
+++http://91.188.243.64:9412
+++http://91.188.243.120:9175
++\ No newline at end of file
++Index: data/parser/proxy_auth.env
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/data/parser/proxy_auth.env b/data/parser/proxy_auth.env
++new file mode 100644
++--- /dev/null	(date 1715684345391)
+++++ b/data/parser/proxy_auth.env	(date 1715684345391)
++@@ -0,0 +1,2 @@
+++PROXY_USER="DnK0dp"
+++PROXY_PASS="yfsbdp"
++\ No newline at end of file
++diff --git a/data/parser/parser_api.py b/data/parser/parser_api.py
++new file mode 100644
+diff --git a/service/settings.env b/settings.env
+rename from service/settings.env
+rename to settings.env
+diff --git a/data/settings.env b/data/orm/settings.env
+rename from data/settings.env
+rename to data/orm/settings.env
