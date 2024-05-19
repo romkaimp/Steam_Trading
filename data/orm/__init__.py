@@ -3,5 +3,6 @@ import asyncio
 import os
 
 
+
 loop = asyncio.get_event_loop()
 loop.run_until_complete(async_create_tables())

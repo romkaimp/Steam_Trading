@@ -3,7 +3,7 @@
 import os
 import celery
 
-os.environ.setdefault("FASTAPI_SETTINGS_MODULE", "service/settings.env")
+os.environ.setdefault("FASTAPI_SETTINGS_MODULE", "settings.env")
 app = celery.Celery("fastapi_celery", broker="redis://localhost:6379")
 app.config_from_object("settings.env", namespace="CELERY")
 app.autodiscover_tasks()

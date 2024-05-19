@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+import os
 
 
 class Settings(BaseSettings):
@@ -21,7 +22,10 @@ class Settings(BaseSettings):
     def DATABASE_URL_sqlite(self):
         return f"sqlite:///{self.DB_NAME}"
 
-    model_config = SettingsConfigDict(env_file="../settings.env")
+    model_config = SettingsConfigDict(env_file=os.path.join(os.path.dirname(__file__), "settings.env"))
 
 
 settings = Settings()
+
+if __name__ == "__main__":
+    print(settings.DATABASE_URL_asyncpg)

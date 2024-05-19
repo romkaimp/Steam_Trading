@@ -1,8 +1,11 @@
+import asyncio
+
 from sklearn.preprocessing import QuantileTransformer, MinMaxScaler
 from numpy import log
 from pmdarima import auto_arima
 from statsmodels.tsa.statespace.sarimax import SARIMAX
-from keras.src.layers import GRU, Dense
+import tensorflow as tf
+from keras.src.layers import GRU, Dense, Input
 from keras.src import Sequential, callbacks
 from typing import Tuple
 import numpy as np
@@ -14,20 +17,23 @@ NEW_VAL_COUNT = 30
 #model = SARIMAX(train, order=(1, 1, 1), seasonal_order=(1, 1, 1, 1))
 class GRUModel:
     def __init__(self):
+        #print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
         self.callbacks = [callbacks.EarlyStopping(patience=2)]
+        #TODO добавить коллбэк для переменного learning rate для обучения модели
 
     async def initialize_weights(self, name):
         self.name = name
-        self.model = Sequential([GRU(128, return_sequences=True, input_shape=(20, 1)),
+        self.model = Sequential([Input((20, 1), 1),
+                                 GRU(128, return_sequences=True),
                                  GRU(64, return_sequences=False),
                                  Dense(25),
                                  Dense(1)])
 
-        ml_weights, new_values = orm.async_ml_weights_values(name=self.name)
+        ml_weights, new_values = await orm.async_ml_weights_values(name=self.name)
         if ml_weights is not None:
             self.model.load_weights(ml_weights, skip_mismatch=False)
         while new_values > NEW_VAL_COUNT:
-            data = orm.async_select_ts(name=self.name)
+            data = await orm.async_select_ts(name=self.name)
             x_train = []
             y_train = []
             X = np.array(data["cost"]).reshape(len(data["cost"]), 1)
@@ -60,3 +66,10 @@ def update_weights():
 
 def predict():
     pass
+
+
+if __name__ == "__main__":
+    loop = asyncio.get_event_loop()
+    name = "AK-47 | Slate (Minimal Wear)"
+    model = GRUModel()
+    loop.run_until_complete(model.initialize_weights(name))
