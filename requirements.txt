@@ -1,0 +1,14 @@
+celery
+asyncpg
+statsmodels
+numpy
+pandas
+sqlalchemy
+pymannkendall
+pydantic
+pydantic_settings
+scikit-learn
+aiohttp
+bs4
+pmdarima
+tensorflow

@@ -9,7 +9,7 @@ from asyncpg.exceptions import SerializationError
 from data.orm.engine import async_engine, async_session, Base
 from data.orm.models import metadata_obj, SteamListings
 from sqlalchemy import select, func, and_, update, insert
-import numpy
+
 NEW_VAL_COUNT = 30
 
 
