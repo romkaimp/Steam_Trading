@@ -4,19 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Steam_Trading.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fake_data/fake_ml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fake_data/fake_orm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="fake_ml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/async_orm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/settings.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/settings.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fake_data/fake_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fake_data/fake_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_orm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/settings.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orm/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/ml/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/ml/data_validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/ml/ml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/predictions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/web_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +45,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -50,19 +57,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.fake_ml.executor": "Run",
-    "Python.fake_orm.executor": "Run",
-    "Python.parser.executor": "Run",
-    "Python.prediction.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "fake__site",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fake_ml.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fake_orm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.parser.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prediction.executor&quot;: &quot;Run&quot;,
+    &quot;Python.web_api.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fake__site&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kuzne\PycharmProjects\Steam_Trading" />
@@ -114,6 +123,19 @@
       <option name="presentableId" value="Default" />
       <updated>1715025068061</updated>
     </task>
+    <task id="LOCAL-00001" summary="fake_ml">
+      <option name="closed" value="true" />
+      <created>1717613977764</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717613977764</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fake_ml" />
+    <option name="LAST_COMMIT_MESSAGE" value="fake_ml" />
   </component>
 </project>
