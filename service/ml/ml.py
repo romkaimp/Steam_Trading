@@ -5,8 +5,9 @@ from numpy import log
 from pmdarima import auto_arima
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-#from keras.src.layers import GRU, Dense, Input
-#from keras.src import Sequential, callbacks
+from keras.src.layers import GRU, Dense, Input
+from keras.src import Sequential, callbacks
+from keras.src.metrics import MeanSquaredError
 from typing import Tuple
 import numpy as np
 import data.orm.async_orm as orm
@@ -19,15 +20,16 @@ class GRUModel:
     def __init__(self):
         #print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
         self.callbacks = [callbacks.EarlyStopping(patience=2)]
-        #TODO добавить коллбэк для переменного learning rate для обучения модели
-
-    async def initialize_weights(self, name):
-        self.name = name
         self.model = Sequential([Input((20, 1), 1),
                                  GRU(128, return_sequences=True),
                                  GRU(64, return_sequences=False),
                                  Dense(25),
                                  Dense(1)])
+
+        #TODO добавить коллбэк для переменного learning rate для обучения модели
+
+    async def initialize_weights(self, name):
+        self.name = name
 
         ml_weights, new_values = await orm.async_ml_weights_values(name=self.name)
         if ml_weights is not None:
@@ -45,16 +47,18 @@ class GRUModel:
 
             x_train, y_train = np.array(x_train), np.array(y_train)
             x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
-            self.model.compile(optimizer='adam', loss='mean_squared_error')
+            self.model.compile(optimizer='adam', loss='mean_squared_error', metrics=[MeanSquaredError()])
             self.model.fit(x_train, y_train, batch_size=5, epochs=20, callbacks=self.callbacks)
             weights = self.model.save_weights
             await orm.async_update_weight(name=self.name, weights=weights)
             new_values -= NEW_VAL_COUNT
         return None
 
-    def predict(self, num) -> Tuple[float, ...]:
-        pass
-
+    async def predict(self, name) -> Tuple[float, ...]:
+        self.name = name
+        ml_weights, new_values = await orm.async_ml_weights_values(name=self.name)
+        if ml_weights is not None:
+            self.model.load_weights(ml_weights, skip_mismatch=False)
 
 def get_values():
     pass
@@ -68,8 +72,8 @@ def predict():
     pass
 
 
-#if __name__ == "__main__":
-#    loop = asyncio.get_event_loop()
-#    name = "AK-47 | Slate (Minimal Wear)"
-#    model = GRUModel()
-#    loop.run_until_complete(model.initialize_weights(name))
+if __name__ == "__main__":
+    loop = asyncio.get_event_loop()
+    name = "USP-S | Jawbreaker (Minimal Wear)"
+    model = GRUModel()
+    loop.run_until_complete(model.initialize_weights(name))
