@@ -12,3 +12,4 @@ aiohttp
 bs4
 pmdarima
 tensorflow
+matplotlib

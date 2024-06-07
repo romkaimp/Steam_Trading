@@ -1,5 +1,7 @@
 import sqlite3
-connection = sqlite3.connect('C:/Users/Kuzne/PycharmProjects/Steam_Trading/data/fake_data/my_database.db')
+import os
+db_path = os.path.join(os.path.curdir, "/my_database.db")
+connection = sqlite3.connect(db_path)
 
 curs = connection.cursor()
 curs.execute("""CREATE TABLE IF NOT EXISTS Listings (

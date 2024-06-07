@@ -15,6 +15,7 @@ from matplotlib.pyplot import imsave
 from sklearn.metrics import r2_score
 
 import numpy as np
+import joblib
 
 
 class Model:
@@ -26,6 +27,9 @@ class Model:
                                       ],
                           final_estimator=GradientBoostingRegressor(n_estimators=25, subsample=0.5))
 
+    def loads(self, model):
+        self.model = model
+
     def train(self, data):
         X = np.array([data[i:i + 20] for i in range(data.size - 20)])
         Y = np.array([data[i] for i in range(20, data.size)])
@@ -33,9 +37,10 @@ class Model:
 
         return self.model
 
-    def predict(self, data):
+
+    def predict_Y(self, data):
         #return data[data.size-20 : data.size]
-        X_new = np.copy(data[data.size-20 : data.size])
+        X_new = np.copy(data[data.size-20 : data.size]).reshape(1, -1)
         #return type(data)
         Y_preds = []
         # print(X_new)
@@ -51,7 +56,7 @@ class Model:
     def plot(self, data):
         fig = plt.figure(1)
         ax = fig.add_subplot()
-        Y_preds = self.predict(data)
+        Y_preds = self.predict_Y(data)
         ax.plot([i for i in range(len(data))], data)
         ax.plot([i for i in range(len(data), len(data)+20)], Y_preds[:20], color="red")
         plt.savefig(f"{self.name}.jpg")

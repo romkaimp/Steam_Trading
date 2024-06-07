@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="fake_ml">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fake_data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/fake_data/fake_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_ml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/fake_data/fake_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_orm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/async_orm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/settings.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/ml/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/ml/data_validation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/ml/ml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/predictions.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/web_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +45,7 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2g6jkspuy11Qhk8vqOjCXRVDOkt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -110,7 +103,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -136,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fake_ml" />
-    <option name="LAST_COMMIT_MESSAGE" value="fake_ml" />
+    <MESSAGE value="ml" />
+    <option name="LAST_COMMIT_MESSAGE" value="ml" />
   </component>
 </project>
