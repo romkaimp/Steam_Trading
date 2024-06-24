@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="fake_ml">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="ready_site">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/fake_data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/fake_data/fake_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_ml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/fake_data/fake_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_orm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,12 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1717613977764</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ready_site">
+      <option name="closed" value="true" />
+      <created>1717783601223</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717783601223</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fake_ml" />
     <MESSAGE value="ml" />
-    <option name="LAST_COMMIT_MESSAGE" value="ml" />
+    <MESSAGE value="ready_site" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready_site" />
   </component>
 </project>

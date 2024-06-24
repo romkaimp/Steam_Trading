@@ -4,11 +4,13 @@ import sqlite3
 import pandas as pd
 import numpy as np
 import pickle
+from async_lru import alru_cache
 from os import path
 db_path = os.path.join(os.path.curdir, "/my_database.db")
 connection = sqlite3.connect(db_path)
 
 curs = connection.cursor()
+
 
 def insert_listing():
     datas = [np.sin(i/10) + np.random.random()/10 for i in range(0, 100)]
@@ -18,6 +20,7 @@ def insert_listing():
                  '''
     curs.execute(insert_query, ("AWP", None, pickle.dumps(df)))
     connection.commit()
+
 
 def insert_all():
     names = ["AWP", "AK", "Deagle", "pp", "Berettas", "M4", "Benelli", "Sg708", "Scout"]
@@ -34,11 +37,13 @@ def insert_all():
             connection.commit()
         print(a)
 
+
 def delete_listing():
     curs.execute("delete from Listings where name='AWP'")
     connection.commit()
 
 
+@alru_cache(ttl=60)
 async def fake_get_prices(curs: sqlite3.Cursor, name: str):
     try:
         a = curs.execute(f'''select pd_data, ml_weights from Listings where name="{name}"
@@ -48,6 +53,8 @@ async def fake_get_prices(curs: sqlite3.Cursor, name: str):
 
     return a
 
+
+@alru_cache(ttl=60)
 async def fake_get_all(curs: sqlite3.Cursor):
     try:
         b = curs.execute("SELECT name FROM Listings").fetchall()
@@ -55,6 +62,13 @@ async def fake_get_all(curs: sqlite3.Cursor):
         return b
     except:
         return
+
+#def insert_user(curs: sqlite3.Cursor, username: str, password: str):
+#    try:
+#        curs.execute(f"SELECT username FROM Users Where username={username}").fetchall()[0]
+#    except IndexError as err:
+#        if len(password) < 8
+#        curs.execute(f"INSERT into Users (name, password) values (")
 
 
 if __name__ == "__main__":

@@ -8,4 +8,9 @@ curs.execute("""CREATE TABLE IF NOT EXISTS Listings (
 name TEXT PRIMARY KEY,
 ml_weights BLOB,
 pd_data BLOB)""")
+
+curs.execute("""CREATE TABLE IF NOT EXISTS Users (
+id INT PRIMARY KEY AUTOINCREMENT,
+username TEXT NOT NULL,
+password TEXT NOT NULL)""")
 connection.commit()
