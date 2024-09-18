@@ -42,6 +42,9 @@ def delete_listing():
     curs.execute("delete from Listings where name='AWP'")
     connection.commit()
 
+def delete_all():
+    curs.execute("delete from Listings")
+    connection.commit()
 
 @alru_cache(ttl=60)
 async def fake_get_prices(curs: sqlite3.Cursor, name: str):
