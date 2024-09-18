@@ -52,9 +52,8 @@ async def get_prices(pg: int, lim: int = ITEMS_COUNT) -> None:
     while True:
         try:
 
-            async with aiohttp.ClientSession(trust_env=True, timeout=aiohttp.ClientTimeout(5)) as session:#trust_env=True) as session:
+            async with aiohttp.ClientSession(trust_env=True, timeout=aiohttp.ClientTimeout(2)) as session:#trust_env=True) as session:
                 proxy_auth = aiohttp.BasicAuth(PROX_USER, PROX_PASS)
-                print(proxy)
                 async with session.get(f'https://steamcommunity.com/market/search/render/',
                                        proxy=proxy,
                                        proxy_auth=proxy_auth,
@@ -67,7 +66,7 @@ async def get_prices(pg: int, lim: int = ITEMS_COUNT) -> None:
                                                "search_descriptions": 0,
                                                "norender": 1,
                                                "query": ""},
-                                       timeout=5) as response:
+                                       timeout=2) as response:
 
                     tex = await response.text()
                     tex = json.loads(tex)
@@ -118,9 +117,9 @@ async def get_prices(pg: int, lim: int = ITEMS_COUNT) -> None:
         except SerializationError as err:
             print(pg, "Serialization Error occured")
             await asyncio.sleep(1)
-        except TypeError as err:
-            print(pg, "Type Error occured", err)
-            proxy = random.choice(PROXIES)
+        #except TypeError as err:
+        #    print(pg, "Type Error occured", err)
+        #    proxy = random.choice(PROXIES)
         except AttributeError as err:
             print(pg, "Attribute error", err)
             #await asyncio.sleep(1)
@@ -141,7 +140,7 @@ async def table_update(pages) -> None:#List[Coroutine | Any]:
     #or await asyncio.sleep(0.5)
     #[await get_prices(i) for i in range(1, 4)]
 
-    [print(i) or await get_prices(i) for i in range(1, pages[0])]
+    [await get_prices(i) for i in range(1, pages[0])]
     await get_prices(pages[0], pages[1])
     await asyncio.sleep(60)
     print("ready")
@@ -162,8 +161,8 @@ if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     pages = (11, 1)
 
-    #[loop.run_until_complete(table_update(pages)) for i in range(50)]
-    loop.run_until_complete(table_update(pages))
+    [loop.run_until_complete(table_update(pages)) for i in range(360)]
+    #loop.run_until_complete(table_update(pages))
     end = time.time()
 
 
