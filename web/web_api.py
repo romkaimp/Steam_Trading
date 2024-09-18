@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .prediction import router as rt
+from web.users import router as rt2
 
 app = FastAPI(docs_url="/docs", openapi_url='/openapi.json', redoc_url=None)
 app.include_router(rt)
+app.include_router(rt2)
 
 origins = [
     "http://localhost:5173",
