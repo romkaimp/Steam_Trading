@@ -15,7 +15,6 @@ from sqlite3 import Cursor
 
 router = APIRouter(prefix='/predict')
 
-
 class Prediction(BaseModel):
     answer: List[float]
 
@@ -28,7 +27,6 @@ class Request(BaseModel):
 def get_db():
     return curs
 
-@alru_cache(maxsize=32)
 @router.get("/")
 async def get_cur(cursor: Cursor = Depends(get_db)):
     names = await fake_get_all(cursor)

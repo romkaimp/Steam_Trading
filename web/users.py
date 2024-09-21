@@ -13,7 +13,7 @@ async def lifespan(app: APIRouter):
     await create_db_and_tables()
     yield
 
-router = APIRouter(prefix='', lifespan=lifespan)
+router = APIRouter(prefix='')
 
 router.include_router(
     fastapi_users.get_auth_router(auth_backend), prefix="/auth/jwt", tags=["auth"]

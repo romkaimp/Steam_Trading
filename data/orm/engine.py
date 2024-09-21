@@ -21,10 +21,6 @@ async_engine = create_async_engine(settings.DATABASE_URL_asyncpg,
                                    isolation_level="AUTOCOMMIT",
                                    connect_args={"timeout": 60})
 
-async def exe_query():
-    async with async_engine.connect() as conn:
-        a = await conn.execute(text("SELECT 1, 2, 3 union SELECT 4, 5, 6"))
-
 async_session = async_sessionmaker(async_engine, class_=AsyncSession, expire_on_commit=False)
 
 str_256 = Annotated[str, 256]
@@ -63,18 +59,20 @@ class Base(DeclarativeBase):
         return f"<{self.__class__.__name__} {','.join(cols)}>"
 
 
-class User(SQLAlchemyBaseUserTableUUID, Base):
+class Base2(DeclarativeBase):
+    pass
+
+class User(SQLAlchemyBaseUserTableUUID, Base2):
     pass
 
 
 async def create_db_and_tables():
     async with async_engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+        await conn.run_sync(Base2.metadata.create_all)
 
 
 async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
-    async with async_session as session:
-        yield session
+    yield async_session()
 
 async def get_user_db(session: AsyncSession = Depends(get_async_session)):
     yield SQLAlchemyUserDatabase(session, User)
