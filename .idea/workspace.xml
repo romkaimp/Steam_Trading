@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="users_ready_frontend-not">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="users_ready_frontend_ready">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orm/users/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/orm/users/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +137,12 @@
       <workItem from="1726686707109" duration="2592000" />
       <workItem from="1726730845092" duration="3880000" />
       <workItem from="1726736833562" duration="14000" />
+      <workItem from="1726931841243" duration="54000" />
+      <workItem from="1726931918845" duration="160000" />
+      <workItem from="1726932183783" duration="368000" />
+      <workItem from="1726933803557" duration="1509000" />
+      <workItem from="1726935678373" duration="489000" />
+      <workItem from="1727177111824" duration="16345000" />
     </task>
     <task id="LOCAL-00001" summary="fake_ml">
       <option name="closed" value="true" />
@@ -167,7 +168,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726649462938</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="users_ready_frontend_ready">
+      <option name="closed" value="true" />
+      <created>1726931880668</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726931880668</updated>
+    </task>
+    <task id="LOCAL-00005" summary="users_ready_frontend_ready">
+      <option name="closed" value="true" />
+      <created>1727203465399</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727203465399</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +196,7 @@
     <MESSAGE value="ready_site" />
     <MESSAGE value="parser" />
     <MESSAGE value="users_ready_frontend-not" />
-    <option name="LAST_COMMIT_MESSAGE" value="users_ready_frontend-not" />
+    <MESSAGE value="users_ready_frontend_ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="users_ready_frontend_ready" />
   </component>
 </project>
