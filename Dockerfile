@@ -18,4 +18,4 @@ COPY . .
 ENV MODULE_NAME web.web_api
 
 # Указываем команду на запуск Uvicorn при старте контейнера
-CMD ["sh", "-c", "uvicorn web.web_api:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "-c", "uvicorn web.web_api:app --host 0.0.0.0 --port 8000 --ssl-keyfile=./selfsigned.key --ssl-certfile=./selfsigned.crt"]

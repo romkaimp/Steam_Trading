@@ -11,9 +11,9 @@ scikit-learn
 aiohttp
 bs4
 pmdarima
-tensorflow
 matplotlib
 numba
 fastapi
 uvicorn
+async_lru
 fastapi-users[sqlalchemy]
