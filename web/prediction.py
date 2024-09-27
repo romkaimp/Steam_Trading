@@ -8,7 +8,7 @@ import json
 import pickle
 import numpy as np
 import data.fake_data.fake_ml as ml
-from data.fake_data.fake_orm import curs, fake_get_prices, fake_get_all
+from data.fake_data.fake_orm import curs, fake_get_prices, fake_get_all, fake_get_img_href
 from async_lru import alru_cache
 
 from sqlite3 import Cursor
@@ -34,12 +34,16 @@ async def get_cur(cursor: Cursor = Depends(get_db)):
     return json_answer
 
 
-@alru_cache(maxsize=32)
+@alru_cache(maxsize=128, ttl=60)
 @router.get("/{name}")
 async def get_pred(name, cursor: Cursor = Depends(get_db)):
     if name[0] == "\'" and name[-1] == "\'":
         name = name[1:-1]
-    data, weights = await fake_get_prices(cursor, name)
+    dataset = await fake_get_prices(cursor, name)
+    data, weights = dataset[0], dataset[1]
+    img_href = await fake_get_img_href(cursor, name)
+    img, href = img_href[0], img_href[1]
+    print(img[0][:-5])
     if data is not None:
         print(True)
         data = np.array(pickle.loads(data)["cost"])
@@ -48,11 +52,11 @@ async def get_pred(name, cursor: Cursor = Depends(get_db)):
     if weights is None:
         model = ml.Model(name)
         koef = model.train(data)
-        update_query = f"UPDATE Listings SET ml_weights=(?) WHERE name='{name}'"
+        update_query = f"UPDATE Listings SET ml_weights=(?) WHERE name=?"
 
-        cursor.execute(update_query, (pickle.dumps(koef), ))
+        cursor.execute(update_query, (pickle.dumps(koef), name, ))
     else:
-        f = cursor.execute(f"SELECT ml_weights FROM Listings where name='{name}'").fetchall()[0]
+        f = cursor.execute(f"SELECT ml_weights FROM Listings where name=?", (name, )).fetchall()[0]
         model = ml.Model(name)
         model.loads(pickle.loads(f[0]))
         #model = pickle.loads(f[0])
@@ -62,4 +66,4 @@ async def get_pred(name, cursor: Cursor = Depends(get_db)):
     Y_data = [{"cost": data[i], "time": i} for i in range(len(data))]
     Y = [{"cost": Y[i], "time": i} for i in range(len(Y))]
 
-    return {"name": name, "costs": Y_data, "prediction": Y}
+    return {"name": name, "costs": Y_data, "prediction": Y, "img": img[:-7]+'/62fx62f', 'href': href}

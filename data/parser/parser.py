@@ -28,7 +28,8 @@ def proxies_tuple() -> tuple[str, ...]:
 
 load_dotenv(dotenv_path=dotenv_path)
 
-PROXIES = proxies_tuple()
+#PROXIES = proxies_tuple()
+PROXIES = []
 PROX_USER = os.getenv("PROXY_USER")
 PROX_PASS = os.getenv("PROXY_PASS")
 
@@ -133,7 +134,69 @@ async def get_prices(pg: int, lim: int = ITEMS_COUNT) -> None:
 
 
             #loop.run_until_complete(task_list)
+async def get_names_images(pg: int, lim: int = ITEMS_COUNT) -> list:
+    #proxy = random.choice(PROXIES)
 
+    while True:
+        try:
+
+            async with aiohttp.ClientSession(trust_env=True, timeout=aiohttp.ClientTimeout(2)) as session:#trust_env=True) as session:
+                #proxy_auth = aiohttp.BasicAuth(PROX_USER, PROX_PASS)
+                async with session.get(f'https://steamcommunity.com/market/search/render/',
+                                       #proxy=proxy,
+                                       #proxy_auth=proxy_auth,
+                                       headers={"user-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.465 (Edition Yx GX)'},
+                                       params={"start": f"{pg*ITEMS_COUNT-ITEMS_COUNT}",
+                                               "count": lim,
+                                               "sort_dir": "desc",
+                                               "sort_column": "popular",
+                                               "appid": 730,
+                                               "search_descriptions": 0,
+                                               "norender": 1,
+                                               "query": ""},
+                                       timeout=2) as response:
+
+                    tex = await response.text()
+                    tex = json.loads(tex)
+                    print(response.status)
+
+
+                    result = []
+                    for listing in tex["results"]:
+                        name = listing["name"]
+                        price = listing["sell_price"]
+                        name20 = name.replace(" ", "%20")
+                        ref = f"https://steamcommunity.com/market/listings/730/{name20}"
+
+                        img_small = "https://community.cloudflare.steamstatic.com/economy/image/" + listing["asset_description"]["icon_url"] + "62fx62f"
+                        img_big = img_small + "dpx2x"
+                        result.append([name, img_small, ref])
+                    return result
+                    break
+        except ClientConnectionError as err:
+            print(pg, "Error occured", err)
+            proxy = random.choice(PROXIES)
+            #await asyncio.sleep(1)
+        except ConnectionError as err:
+            print(pg, "Connection error", err)
+            proxy = random.choice(PROXIES)
+            #await asyncio.sleep(1)
+        except SerializationError as err:
+            print(pg, "Serialization Error occured")
+            await asyncio.sleep(1)
+        #except TypeError as err:
+        #    print(pg, "Type Error occured", err)
+        #    proxy = random.choice(PROXIES)
+        except AttributeError as err:
+            print(pg, "Attribute error", err)
+            #await asyncio.sleep(1)
+            #await asyncio.sleep(1)
+        except aiohttp.client_exceptions.ClientHttpProxyError as err:
+            print("Proxy error")
+            proxy = random.choice(PROXIES)
+        except asyncio.TimeoutError as err:
+            print("Timeout err")
+            proxy = random.choice(PROXIES)
 
 async def table_update(pages) -> None:#List[Coroutine | Any]:
     list_of_tasks = []
@@ -148,7 +211,14 @@ async def table_update(pages) -> None:#List[Coroutine | Any]:
     #list_of_tasks.append(get_prices(pages[0], pages[1]))
     #await asyncio.gather(*list_of_tasks)
 
-
+async def list_names_images(pages) -> list:
+    lister = []
+    res = []
+    for i in range(pages):
+        lister.append(await get_names_images(i))
+        for j in lister[i]:
+            res.append(j)
+    return res
 #async def main():
 #    loop = asyncio.get_event_loop()
 #    # pages = loop.run_until_complete(pagination_limit()) FOR POWERFUL DATABASE

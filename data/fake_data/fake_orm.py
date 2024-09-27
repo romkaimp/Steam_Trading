@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from async_lru import alru_cache
+from data.parser.parser import list_names_images
 from os import path
 db_path = os.path.join(os.path.curdir, "/my_database.db")
 connection = sqlite3.connect(db_path)
@@ -22,18 +23,21 @@ def insert_listing():
     connection.commit()
 
 
-def insert_all():
-    names = ["AWP", "AK", "Deagle", "pp", "Berettas", "M4", "Benelli", "Sg708", "Scout"]
-    datas = [[np.sin(i/10) + np.random.random()/10 + j for i in range(0, 100)] for j in range(0, 10)]
+def insert_all(names_images):
+    names = [i[0] for i in names_images]
+    imgs = [i[1] for i in names_images]
+    hrefs = [i[2] for i in names_images]
+    k = [np.random.random()*2*np.pi*10 for j in range(len(names))]
+    datas = [[np.sin(i/10 + k[j])*max(1, int(k[j])) + np.random.random()/10*k[j] + j + 1 for i in range(0, 100)] for j in range(len(names))]
 
     for j, i in enumerate(names):
-
-        if len(a := curs.execute(f"SELECT * FROM Listings WHERE name='{i}'").fetchall()) == 0:
-            insert_query = '''insert into Listings (name, ml_weights, pd_data) values(
-                             ?, ?, ?)
+        k = np.random.random() * np.pi * 2
+        if len(a := curs.execute(f"SELECT * FROM Listings WHERE name=?", (i,)).fetchall()) == 0:
+            insert_query = '''insert into Listings (name, ml_weights, pd_data, img, href) values(
+                             ?, ?, ?, ?, ?)
                              '''
             df = pd.DataFrame({"cost": datas[j], "time": [i for i in range(0, 100)]})
-            curs.execute(insert_query, (i, None, pickle.dumps(df)))
+            curs.execute(insert_query, (i, None, pickle.dumps(df), imgs[j], hrefs[j]))
             connection.commit()
         print(a)
 
@@ -56,6 +60,15 @@ async def fake_get_prices(curs: sqlite3.Cursor, name: str):
 
     return a
 
+@alru_cache(ttl=60)
+async def fake_get_img_href(curs: sqlite3.Cursor, name: str):
+    try:
+        a = curs.execute(f'''select img, href from Listings where name="{name}"
+        ''').fetchall()[0]
+    except IndexError as err:
+        return "Not really name"
+
+    return a
 
 @alru_cache(ttl=60)
 async def fake_get_all(curs: sqlite3.Cursor):

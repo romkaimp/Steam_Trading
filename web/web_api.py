@@ -5,9 +5,16 @@ from web.users import router as rt2
 from contextlib import asynccontextmanager
 from data.orm.engine import User, create_db_and_tables
 
+import data.fake_data.fake_orm as fkorm
+from data.parser.parser import list_names_images
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Not needed if you setup a migration system like Alembic
+    #fkorm.delete_all()
+    #k = await list_names_images(5)
+    #print(k)
+    #fkorm.insert_all(k)
     await create_db_and_tables()
     yield
 
