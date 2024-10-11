@@ -7,13 +7,11 @@ sqlalchemy
 pymannkendall
 pydantic
 pydantic_settings
-scikit-learn
-aiohttp
-bs4
-pmdarima
-matplotlib
-numba
+torch
 fastapi
 uvicorn
 async_lru
 fastapi-users[sqlalchemy]
+redis
+boto3
+pybit

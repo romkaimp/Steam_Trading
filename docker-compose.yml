@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  web:
+    build: .
+    command: >
+      sh -c "celery -A web.celery_app worker --loglevel=info"
+    volumes:
+      - .:/my_project
+    depends_on:
+      - redis

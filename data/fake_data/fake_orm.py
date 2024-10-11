@@ -5,22 +5,11 @@ import pandas as pd
 import numpy as np
 import pickle
 from async_lru import alru_cache
-from data.parser.parser import list_names_images
 from os import path
 db_path = os.path.join(os.path.curdir, "/my_database.db")
 connection = sqlite3.connect(db_path)
 
 curs = connection.cursor()
-
-
-def insert_listing():
-    datas = [np.sin(i/10) + np.random.random()/10 for i in range(0, 100)]
-    df = pd.DataFrame({"cost": datas, "time": [i for i in range(0, 100)]})
-    insert_query = '''insert into Listings (name, ml_weights, pd_data) values(
-                 ?, ?, ?)
-                 '''
-    curs.execute(insert_query, ("AWP", None, pickle.dumps(df)))
-    connection.commit()
 
 
 def insert_all(names_images):
@@ -41,6 +30,19 @@ def insert_all(names_images):
             connection.commit()
         print(a)
 
+def insert_all():
+    cl = HTTP()
+    with open("coins.json", "r") as file:
+        data = json.load(file)["coins"]
+    for symbol in data:
+        if len(a := curs.execute(f"SELECT * FROM Listings WHERE name=?", (i,)).fetchall()) == 0:
+            insert_query = '''insert into Listings (name, ml_weights, pd_data, img, href) values(
+                             ?, ?, ?, ?, ?)
+                             '''
+            df = pd.DataFrame({"cost": datas[j], "time": [i for i in range(0, 100)]})
+            curs.execute(insert_query, (i, None, pickle.dumps(df), imgs[j], hrefs[j]))
+            connection.commit()
+        print(a)
 
 def delete_listing():
     curs.execute("delete from Listings where name='AWP'")

@@ -1,17 +1,21 @@
 import fastapi
+import torch
 from pydantic import BaseModel
 from typing import Tuple, List
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from joblib.memory import Memory
 import data.fake_data
 import json
-import pickle
+import pandas as pd
+
 import numpy as np
 import data.fake_data.fake_ml as ml
 from data.fake_data.fake_orm import curs, fake_get_prices, fake_get_all, fake_get_img_href
 from async_lru import alru_cache
 
-from sqlite3 import Cursor
+import boto3
+from datetime import timedelta
+from datetime import datetime
 
 router = APIRouter(prefix='/predict')
 
@@ -27,43 +31,51 @@ class Request(BaseModel):
 def get_db():
     return curs
 
+model = ml.Model()
+session = boto3.session.Session()
+s3 = session.client(service_name='s3',endpoint_url='https://storage.yandexcloud.net')
+
 @router.get("/")
-async def get_cur(cursor: Cursor = Depends(get_db)):
-    names = await fake_get_all(cursor)
-    json_answer = [{"name": j, "id": i} for i, j in enumerate(names)]
+async def get_cur(
+        #cursor: Cursor = Depends(get_db)
+):
+    objects = list()
+    for key in s3.list_objects(Bucket='test-actions')['Contents']:
+        name = key["Key"]
+        if name.startswith("test/") and name != "test/":
+            objects.append(name[5:])
+
+    json_answer = [{"name": j, "id": i} for i, j in enumerate(objects)]
     return json_answer
 
 
 @alru_cache(maxsize=128, ttl=60)
 @router.get("/{name}")
-async def get_pred(name, cursor: Cursor = Depends(get_db)):
+async def get_pred(
+        name,
+        #cursor: Cursor = Depends(get_db)
+):
     if name[0] == "\'" and name[-1] == "\'":
         name = name[1:-1]
-    dataset = await fake_get_prices(cursor, name)
-    data, weights = dataset[0], dataset[1]
-    img_href = await fake_get_img_href(cursor, name)
-    img, href = img_href[0], img_href[1]
-    print(img[0][:-5])
-    if data is not None:
-        print(True)
-        data = np.array(pickle.loads(data)["cost"])
-    else:
-        raise HTTPException(status_code=403)
-    if weights is None:
-        model = ml.Model(name)
-        koef = model.train(data)
-        update_query = f"UPDATE Listings SET ml_weights=(?) WHERE name=?"
 
-        cursor.execute(update_query, (pickle.dumps(koef), name, ))
-    else:
-        f = cursor.execute(f"SELECT ml_weights FROM Listings where name=?", (name, )).fetchall()[0]
-        model = ml.Model(name)
-        model.loads(pickle.loads(f[0]))
-        #model = pickle.loads(f[0])
-    Y = model.predict_Y(data)
+    print('test/'+name)
+    get_object_response = s3.get_object(Bucket='test-actions', Key='test/'+name)
+    df = pd.read_csv(get_object_response['Body'], sep=";")
+    data = df['<CLOSE>'].to_numpy()
+
+    df['<DATE>'] = pd.to_datetime(df['<DATE>']).dt.date
+    df['<TIME>'] = pd.to_datetime(df['<TIME>']).dt.time
+
+    # Объединяем `date` и `time` в одном объекте datetime
+    combined = np.array([datetime.combine(d, t) for d, t in zip(df['<DATE>'], df['<TIME>'])])
+
+    print(data)
+    Y = model.predict_y(torch.tensor(data))[0][0].tolist()
+    new_dates = [combined[-1] + timedelta(hours=i) for i in range(1, len(Y) + 1)]
+    print(Y)
     #graphic = model.plot(data)
 
-    Y_data = [{"cost": data[i], "time": i} for i in range(len(data))]
-    Y = [{"cost": Y[i], "time": i} for i in range(len(Y))]
+    Y_data = [{"cost": data[i], "time": combined[i]} for i in range(len(data))]
+    Y = [{"cost": Y[i], "time": new_dates[i]} for i in range(len(Y))]
 
-    return {"name": name, "costs": Y_data, "prediction": Y, "img": img[:-7]+'/62fx62f', 'href': href}
+    return {"name": name, "costs": Y_data, "prediction": Y, "img": ''+'/62fx62f', 'href': ''}

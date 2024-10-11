@@ -15,7 +15,7 @@ async def lifespan(app: FastAPI):
     #k = await list_names_images(5)
     #print(k)
     #fkorm.insert_all(k)
-    await create_db_and_tables()
+    #await create_db_and_tables()
     yield
 
 app = FastAPI(docs_url="/docs", openapi_url='/openapi.json', redoc_url=None, lifespan=lifespan)

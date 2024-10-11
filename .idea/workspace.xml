@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="users_ready_frontend_ready">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="0984cdb9-a3f8-461c-8ada-7082ad1f60e2" name="Changes" comment="new">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend.pfx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/celery_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/celery_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fake_data/fake_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fake_data/fake_orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/fake_data/fake_orm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/parser/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/coins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/parser/parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/parser/proxies.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/parser/proxy_auth.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selfsigned.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selfsigned.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/web_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/web_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +88,13 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\FASTAPI\pythonProject\service" />
       <recent name="C:\Users\Kuzne\PycharmProjects\Steam_Trading" />
       <recent name="C:\Users\Kuzne\PycharmProjects\Steam_Trading\data\orm" />
     </key>
@@ -142,7 +158,17 @@
       <workItem from="1726932183783" duration="368000" />
       <workItem from="1726933803557" duration="1509000" />
       <workItem from="1726935678373" duration="489000" />
-      <workItem from="1727177111824" duration="16345000" />
+      <workItem from="1727177111824" duration="18586000" />
+      <workItem from="1727345563794" duration="10995000" />
+      <workItem from="1727410546029" duration="579000" />
+      <workItem from="1727678180547" duration="896000" />
+      <workItem from="1727932832170" duration="5102000" />
+      <workItem from="1727944537178" duration="7388000" />
+      <workItem from="1727983323276" duration="901000" />
+      <workItem from="1728589434193" duration="3614000" />
+      <workItem from="1728631005121" duration="1094000" />
+      <workItem from="1728632877995" duration="5214000" />
+      <workItem from="1728639216731" duration="364000" />
     </task>
     <task id="LOCAL-00001" summary="fake_ml">
       <option name="closed" value="true" />
@@ -184,7 +210,31 @@
       <option name="project" value="LOCAL" />
       <updated>1727203465399</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="users_ready_frontend_ready">
+      <option name="closed" value="true" />
+      <created>1727204707913</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727204707913</updated>
+    </task>
+    <task id="LOCAL-00007" summary="parser">
+      <option name="closed" value="true" />
+      <created>1727410641591</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727410641591</updated>
+    </task>
+    <task id="LOCAL-00008" summary="new">
+      <option name="closed" value="true" />
+      <created>1727411126125</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727411126125</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,9 +244,14 @@
     <MESSAGE value="fake_ml" />
     <MESSAGE value="ml" />
     <MESSAGE value="ready_site" />
-    <MESSAGE value="parser" />
     <MESSAGE value="users_ready_frontend-not" />
     <MESSAGE value="users_ready_frontend_ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="users_ready_frontend_ready" />
+    <MESSAGE value="parser" />
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pythonProject$web_api.coverage" NAME="web_api Coverage Results" MODIFIED="1727356452332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
+    <SUITE FILE_PATH="coverage/pythonProject$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1727360198611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/fake_data" />
   </component>
 </project>
